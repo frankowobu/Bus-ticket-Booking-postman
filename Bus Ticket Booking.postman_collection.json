@@ -1,0 +1,312 @@
+{
+	"info": {
+		"_postman_id": "09757547-4d98-438c-8dca-cda78722b6c0",
+		"name": "Bus Ticket Booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27122545"
+	},
+	"item": [
+		{
+			"name": "Register Passenger",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbi10aWNrZXQtYm9va2luZ0BnbWFpbC5jb20iLCJpYXQiOjE3MzQyNjgxNjYsImV4cCI6MTczNDI3NTM2Nn0.WUKDNnTPFyfKrqsLSOJaxby9BBmmwD9tZ-cfIFNRa3g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Tochukwu\",\r\n    \"lastName\" : \"Okes\",\r\n    \"email\" : \"tolex20004real@gmail.com\",\r\n    \"phoneNumber\" : \"+2349034204902\",\r\n    \"password\" : \"Teenwolf156$\",\r\n    \"confirmPassword\": \"Teenwolf156$\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8788/api/v1/auth/register-passenger",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8788",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"register-passenger"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Passenger Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"tolex2004real@gmail.com\",\r\n    \"password\" : \"Teenwolf156$\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8788/api/v1/auth/login-passenger",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8788",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login-passenger"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book Ticket",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0b2xleDIwMDA0cmVhbEBnbWFpbC5jb20iLCJpYXQiOjE3MzQyNjkzMjcsImV4cCI6MTczNDI3NjUyN30.5rGkUrpuhqdgr7HbkpTHZ1KenE7RgvwcYQA2n1wKFhA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"busId\" : 2,\r\n    \"routeId\" : 1,\r\n    \"seatNumber\": \"16\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8788/api/v1/passenger/book-ticket",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8788",
+					"path": [
+						"api",
+						"v1",
+						"passenger",
+						"book-ticket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"onlinebooking@gmail.com\",\r\n    \"password\" : \"Teenwolf156$\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8788/api/v1/auth/login-admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8788",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login-admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create and update Route",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"origin\": \"City A\",\r\n    \"destination\": \"City B\",\r\n    \"departureDate\": \"2024-12-30\",\r\n    \"departureTime\": \"15:30:00\",\r\n    \"duration\": \"4 HOURS\",\r\n    \"price\": 15000.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8788/api/v1/admin/create-route",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8788",
+					"path": [
+						"api",
+						"v1",
+						"admin",
+						"create-route"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Operators",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0b2xleDIwMDA0cmVhbEBnbWFpbC5jb20iLCJyb2xlIjpbeyJhdXRob3JpdHkiOiJQQVNTRU5HRVIifV0sImlhdCI6MTczNDI3OTg1MCwiZXhwIjoxNzM0MzQ0NjUwfQ.lr7wmquZC6q3Vg1i_MiPnBAsjJskch_pihACnKei9EY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8788/api/v1/passenger/rout?origin=abia&destination=lagos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8788",
+					"path": [
+						"api",
+						"v1",
+						"passenger",
+						"rout"
+					],
+					"query": [
+						{
+							"key": "origin",
+							"value": "abia"
+						},
+						{
+							"key": "destination",
+							"value": "lagos"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Routes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Tickets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Bus Operator",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"driverName\" : \"BossMan\",\r\n    \"busModel\" : \"Toyota\",\r\n    \"capacity\" : 22,\r\n    \"phoneNumber\" : \"09031640389\",\r\n    \"busNumber\" : \"4556\",\r\n    \"routeId\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8788/api/v1/admin/buses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8788",
+					"path": [
+						"api",
+						"v1",
+						"admin",
+						"buses"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbi10aWNrZXQtYm9va2luZ0BnbWFpbC5jb20iLCJpYXQiOjE3MzU1NTA1NjAsImV4cCI6MTczNTU1Nzc2MH0.59Zb4qdMSt-NlLsDI546PdJpl3H7x65IqIGueFZTWcI",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
